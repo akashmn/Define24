@@ -1,7 +1,7 @@
+import React, { useState } from 'react';
 import Table from "../Components/Table"
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import { TextField, Modal } from '@mui/material';
-import { useState } from 'react';
+import { TextField, Modal, Box } from '@mui/material';
 
 function History() {
   const titles = ["Case ID", "Date", "Status"];
@@ -47,8 +47,19 @@ function History() {
       <Modal
         open={modalIsOpen}
         onClose={closeModal}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
       >
-        {/* Display the selected case details here */}
+        <Box sx={{ width: 400, padding: 4, bgcolor: 'background.paper' }}>
+          <h2 id="modal-modal-title">Case Details</h2>
+          {selectedCase && (
+            <div id="modal-modal-description">
+              <p>Case ID: {selectedCase.caseId}</p>
+              <p>Date: {selectedCase.date}</p>
+              <p>Status: {selectedCase.status}</p>
+            </div>
+          )}
+        </Box>
       </Modal>
     </div>
   );
