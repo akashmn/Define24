@@ -7,7 +7,7 @@ The template repository for definehack2024
 Tell us about your project here
 
 ### Team Members
-[1.Akash M Nandan](www.github.com/akashmn)   
+[1.Akash M Nandan](akashmn)   
 [2.Team Member 2](enter_github_id_here)   
 [3.Team Member 3](enter_github_id_here)   
 [4.Team Member 4](enter_github_id_here)   
