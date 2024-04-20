@@ -4,16 +4,20 @@ import Dashboard from './Pages/Dashboard'
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 import ActiveCases from './Pages/ActiveCases'
+import History from './Pages/HistoryCases'
+
 
 function App() {
   
 
   return (
    <>
-    <ActiveCases/>
+
     <Dashboard/>
     <Login/>
     <Register/>
+    <History/>
+    <ActiveCases/>
    </>
   )
 }
