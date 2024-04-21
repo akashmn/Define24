@@ -1,10 +1,10 @@
 import './App.css'
+import Layout from './Layout'
 // import Sidebar from './Components/Sidebar'
-import Dashboard from './Pages/Dashboard'
-import Login from './Pages/Login'
-import Register from './Pages/Register'
-import ActiveCases from './Pages/ActiveCases'
-import History from './Pages/HistoryCases'
+
+// import Login from './Pages/Login'
+// import Register from './Pages/Register'
+
 
 
 function App() {
@@ -13,11 +13,10 @@ function App() {
   return (
    <>
 
-    {/* <Dashboard/> */}
+    <Layout/>
     {/* <Login/> */}
-    <Register/>
-    <History/>
-    {/* <ActiveCases/> */}
+    {/* <Register/> */}
+    
    </>
   )
 }

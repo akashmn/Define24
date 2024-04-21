@@ -1,6 +1,6 @@
 
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-import Sidebar from "../Components/Sidebar"
+
 
 const Dashboard = () => {
   const username = 'User'; // Replace this with actual username
@@ -18,11 +18,10 @@ const Dashboard = () => {
 
   return (
     <div className="flex h-screen bg-gray-200">
-      <Sidebar/>
       <div className="flex flex-col w-full">
-        <div className="bg-blue-500 text-white text-2xl p-6 flex-1">Hello, {username}</div>
+        <div className="bg-blue-500 text-white text-2xl p-6 flex-1 ml-[250px]">Hello, {username}</div>
         <div className="flex flex-1">
-          <div className="w-3/4 bg-white p-6">
+          <div className="w-3/4 bg-white p-6 ml-[250px]">
             <BarChart width={500} height={300} data={data}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
