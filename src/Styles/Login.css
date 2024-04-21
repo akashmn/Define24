@@ -1,0 +1,17 @@
+.logincontainer {
+    background-color: #F6F6F6;
+    background-image: linear-gradient(to right, #eee 1px, transparent 1px), linear-gradient(to bottom, #eee 1px, transparent 1px);
+    background-size: 70px 70px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.innerlogincontainer{
+    width: 100%;
+}
+.submitbutton{
+    background-color: #816CDF;
+}

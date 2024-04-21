@@ -13,11 +13,11 @@ function App() {
   return (
    <>
 
-    <Dashboard/>
+    {/* <Dashboard/> */}
     <Login/>
-    <Register/>
-    <History/>
-    <ActiveCases/>
+    {/* <Register/> */}
+    {/* <History/> */}
+    {/* <ActiveCases/> */}
    </>
   )
 }
