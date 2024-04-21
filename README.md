@@ -15,14 +15,17 @@ Guardi is a centralised platform designed to empower users to report cyber and p
 
 
 ### Link to Project
-[Embed the live link of project](live_link)
+[Embed the live link of project](https://vercel.com/new/akashmn)
 
 ### How it Works ?
 Explaining the working of project  
 Embed video of project demo
 
 ### Technologies used
-List out tech stacks you have used
+1. React JS
+2. Node Express
+3. MongoDB
+4. Telegram Bot integrated with AI
 
 ### How to configure
 Instructions for setting up project
