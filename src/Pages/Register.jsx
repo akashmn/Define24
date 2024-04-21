@@ -1,102 +1,84 @@
-import { useState } from "react";
-import '../Styles/Login.css'
+import { useState } from 'react';
+import { FaLock, FaEnvelope, FaUser, FaBuilding } from 'react-icons/fa'; // Importing icons
 
 const Register = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    password: '',
+    department: ''
+  });
 
-    const [formData, setFormData] = useState({
-        name: '',
-        username: '',
-        password: '',
-        retypePassword: '',
-        email: ''
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
     });
+  };
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value
-        });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle registration logic here
-        console.log(formData);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle registration logic here
+    console.log(formData);
+  };
 
   return (
-    <div className="container mx-auto mt-10">
-            <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-lg">
-                <h1 className="text-2xl font-semibold mb-6 text-center">Register</h1>
-                
-                <form onSubmit={handleSubmit}>
-                <div className="mb-4">
-                        {/* Username */}
-                        <label htmlFor="username" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                        <input 
-                            type="text" 
-                            name="name" 
-                            id="name" 
-                            className="w-full p-2 border rounded-md"
-                            value={formData.name}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    {/* Password */}
-                    <div className="mb-4">
-                        <label htmlFor="password" className="block text-gray-700 text-sm font-bold mb-2">Password</label>
-                        <input 
-                            type="password" 
-                            name="password" 
-                            id="password" 
-                            className="w-full p-2 border rounded-md"
-                            value={formData.password}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    {/* Email */}
-                    <div className="mb-4">
-                        <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-                        <input 
-                            type="email" 
-                            name="email" 
-                            id="email" 
-                            className="w-full p-2 border rounded-md"
-                            value={formData.email}
-                            onChange={handleChange}
-                        />
-                    </div>
-
-                    {/* Department */}
-<div className="mb-4">
-    <label htmlFor="department" className="block text-gray-700 text-sm font-bold mb-2">Department</label>
-    <select 
-        name="department" 
-        id="department" 
-        className="w-full p-2 border rounded-md"
-        value={formData.department}
-        onChange={handleChange}
-    >
-        <option value="">Select a department</option>
-        <option value="crime">Crime</option>
-        <option value="crime">Cyber</option>
-        <option value="crime">Police</option>
-        <option value="crime">Traffic</option>
-        {/* Add more options as needed */}
-    </select>
-</div>
-
-                    {/* Submit Button */}
-                    <div className="mb-4">
-                        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Register</button>
-                    </div>
-                </form>
-            </div>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8" style={{backgroundColor: '#F6F6F6', backgroundImage: 'linear-gradient(to right, #eee 1px, transparent 1px), linear-gradient(to bottom, #eee 1px, transparent 1px)', backgroundSize: '70px 70px'}}>
+      <div className="max-w-md w-full space-y-6 bg-white p-8 border border-gray-200 rounded-xl shadow-lg">
+        <div className="text-center">
+          <h2 className="mt-6 text-3xl font-extrabold text-gray-900">
+            Add Admin
+          </h2>
         </div>
-  )
-}
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+          <div className="rounded-md shadow-sm -space-y-px">
+            <div>
+              <label htmlFor="name" className="sr-only">Name</label>
+              <div className="flex items-center px-3 py-2 border border-gray-300 rounded-t-md">
+                <FaUser className="text-gray-500" /> {/* User icon */}
+                <input id="name" name="name" type="text" required className="ml-3 block w-full placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Name" value={formData.name} onChange={handleChange} />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="email" className="sr-only">Email</label>
+              <div className="flex items-center px-3 py-2 border border-gray-300">
+                <FaEnvelope className="text-gray-500" /> {/* Email icon */}
+                <input id="email" name="email" type="email" required className="ml-3 block w-full placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Email" value={formData.email} onChange={handleChange} />
+              </div>
+            </div>
+            <div>
+              <label htmlFor="password" className="sr-only">Password</label>
+              <div className="flex items-center px-3 py-2 border border-gray-300">
+                <FaLock className="text-gray-500" /> {/* Password icon */}
+                <input id="password" name="password" type="password" required className="ml-3 block w-full placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Password" value={formData.password} onChange={handleChange} />
+              </div>
+            </div>
+            <div>
+                <label htmlFor="department" className="sr-only">Department</label>
+                <div className="flex items-center px-3 py-2 border border-gray-300 rounded-b-md">
+                    <FaBuilding className="text-gray-500" /> {/* Department icon */}
+                        <select id="department" name="department" required className="ml-3 block w-full placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value={formData.department} onChange={handleChange}>
+                            <option value="">Select department</option>
+                            <option value="Police">Police </option>
+                            <option value="Traffic-Rules">Traffic Rules</option>
+                            <option value="Cyber-attack">Cyber attack</option>
+                            <option value="Bulliying">Bulliying</option>
+                            {/* Add more options as needed */}
+                        </select>
+                </div>
+            </div>
+          </div>
 
-export default Register
+          <div>
+            <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-[#816cdf] hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+              Register
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Register;

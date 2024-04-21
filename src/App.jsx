@@ -14,9 +14,9 @@ function App() {
    <>
 
     {/* <Dashboard/> */}
-    <Login/>
-    {/* <Register/> */}
-    {/* <History/> */}
+    {/* <Login/> */}
+    <Register/>
+    <History/>
     {/* <ActiveCases/> */}
    </>
   )
